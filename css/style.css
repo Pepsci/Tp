@@ -1,6 +1,6 @@
 body{
-background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(76,112,129,1) 47%, rgba(0,212,255,1) 100%); 
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(76,112,129,1) 47%, rgba(0,212,255,1) 100%); 
 }
 form {
   font-family: L, sans-serif;
@@ -11,14 +11,14 @@ form {
   display: flex;
   flex-direction: column;
   width: 250px;
-  height: 300px;
+  height: 400px;
   border: 2px solid white;
   border-radius: 50px;
-box-shadow: 0px 0px 17px 13px rgba(118, 146, 200, 0.79);
--moz-box-shadow: 0px 0px 17px 13px rgba(118, 146, 200, 0.79);
--webkit-box-shadow: 0px 0px 17px 13px rgba(118, 146, 200, 0.79);
-background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(76,112,129,1) 47%, rgba(0,212,255,1) 100%);
+  box-shadow: 0px 0px 17px 13px rgba(118, 146, 200, 0.79);
+  -moz-box-shadow: 0px 0px 17px 13px rgba(118, 146, 200, 0.79);
+  -webkit-box-shadow: 0px 0px 17px 13px rgba(118, 146, 200, 0.79);
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(76,112,129,1) 18%, rgba(0,212,255,1) 100%);
 }
 button{
   font-family: L, sans-serif;
@@ -29,16 +29,23 @@ button{
   margin-left: 75px;
   margin-top: 30px;
   border-radius: 50px;
- background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(76,112,129,1) 47%, rgba(0,212,255,1) 100%);
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(76,112,129,1) 18%, rgba(0,212,255,1) 100%);
 }
-form input::placeholder{
+form input::placeholder, #textarea::placeholder{
     color: white;
 }
 span{
  font-size: 10px;
 }
-#valideemail{
+#valideemail, #validetel{
   color: red;
   font-size: 15px;
+}
+.cacherform{
+  display: none;
+}
+.message{
+  visibility: hidden;
+  /*display: none;*/
 }

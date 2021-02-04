@@ -7,7 +7,15 @@ $(document).ready(function(){
       $(this).css('background-color','white');
     });
 
+  $('#textarea').focus(function(){
+    $(this).css('background-color','lightblue');
+  });
+   $('#textarea').focusout(function(){
+      $(this).css('background-color','white');
+    });
+
   $('button').click(function () {
+
     valid = true;
     if($('#nom').val() == ""){
         $('#nom').css('background-color', '#8E1428')
@@ -27,13 +35,47 @@ $(document).ready(function(){
        $('#email').next('#valideemail').fadeIn().text("Entrez un email valide ! ");
         valid = false
     }
+        if($('#textarea').val() == ""){
+        $('#textarea').css('background-color', '#8E1428')
+        $('#textarea').attr('placeholder','Veuillez laissez un message',)
+        valid = false
+    }
+    if($('#tel').val() == ""){
+        $('#tel').css('background-color', '#8E1428')
+        $('#tel').attr('placeholder','Veuillez entrez votre tel')
+        valid = false
+    }else if (!$('#tel').val().match(/^(0|\+33)[1-9]([-. ]?[0-9]{2}){4}$/)) {
+       $('#tel').next('#validetel').fadeIn().text("Entrez un numéro valide ! ");
+        valid = false
+    }  
+    if ($('input').val() != ""){
+      $('form').css('display', 'none');
+      $('.message').css('visibility', 'visible');
+         valid = false
+
+    }
+
+
+
     return valid;
   })
+
+  $('textarea').bind('keyup', function() {
+      var mots = $.trim($("textarea").val()).split(" ");
+      $('#compteur_mots').html(mots.length)
+    });
+    $('textarea').bind('keyup', function() {
+      $('#compteur_caractere').html(textarea.value.length)
+    });
+
 })
 
-    $('textarea').bind('keyup', function() {
-document.getElementById('compteur_caractere').innerHTML = textarea.value.length;     
-    });
+
+
+
+
+
+
 
 
 
